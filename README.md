@@ -8,6 +8,17 @@
 ## 環境構築
 
 1. このリポジトリをクローンするディレクトリまで移動します
-1. `git clone https://github.com/KenyaMasuko/react-samples.git` でこのリポジトリをクローンします
-1. 該当ディレクトリまで移動して `npm install` で npm パッケージをインストールします
-1. 各ディレクトリの `package.json` に記載されている npm script を元に各自で動かしてください
+
+2. クローンする
+   ```sh
+    git clone https://github.com/KenyaMasuko/react-samples.git
+   ```
+3. 該当ディレクトリまで移動して
+
+   ```sh
+   npm install
+   ```
+
+   で npm パッケージをインストールします
+
+4. 各ディレクトリの `package.json` に記載されている npm script を元に各自で動かしてください
