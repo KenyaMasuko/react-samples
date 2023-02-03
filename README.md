@@ -13,7 +13,7 @@
    ```sh
     git clone https://github.com/KenyaMasuko/react-samples.git
    ```
-3. 該当ディレクトリまで移動して
+3. `react-samples`の中の該当ディレクトリまで移動して
 
    ```sh
    npm install
