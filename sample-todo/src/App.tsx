@@ -1,11 +1,8 @@
 import { FormEvent, ReactElement, useState } from "react";
 import "./App.css";
-
-type Todo = {
-	id: number;
-	title: string;
-	isDone: boolean;
-};
+import { TodoForm } from "./components/TodoForm";
+import { TodoList } from "./components/TodoList";
+import type { Todo } from "./types";
 
 const DEFAULT_TODOS: Todo[] = [
 	{
@@ -30,7 +27,7 @@ function App(): ReactElement {
 	const [title, setTitle] = useState("");
 	const [editId, setEditId] = useState(0);
 
-	const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+	const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
 		event.preventDefault();
 
 		if (editId !== 0) {
@@ -77,47 +74,19 @@ function App(): ReactElement {
 	return (
 		<div className="App">
 			<h1>TODOS</h1>
-			<form
-				onSubmit={handleSubmit}
-				onReset={handleReset}
-				style={{ display: "flex", alignItems: "center", gap: 10 }}>
-				<input
-					type="text"
-					value={title}
-					onChange={(prevState) => setTitle(prevState.currentTarget.value)}
-					placeholder="todoを記入..."
-					style={{ padding: 10 }}
-				/>
-				<button type="submit">{editId !== 0 ? "更新" : "作成"}</button>
-				<button type="reset">リセット</button>
-			</form>
-			<table style={{ marginTop: 30 }}>
-				<thead>
-					<tr>
-						<th style={{ textAlignLast: "justify", width: 150 }}>TITLE</th>
-						<th style={{ width: 80 }}>DONE</th>
-						<th style={{ width: 80 }}>ACTION</th>
-					</tr>
-				</thead>
-				<tbody>
-					{todos?.map((todo) => (
-						<tr key={todo.id}>
-							<td style={{ textAlignLast: "justify" }}>{todo.title}</td>
-							<td>
-								<input
-									type="checkbox"
-									checked={todo.isDone}
-									onChange={() => handleRemove(todo.id)}
-								/>
-							</td>
-							<td>
-								<button onClick={() => handleUpdate(todo)}>更新</button>
-							</td>
-						</tr>
-					))}
-				</tbody>
-			</table>
-			<ul></ul>
+
+			<TodoForm
+				handleSubmit={handleSubmit}
+				handleReset={handleReset}
+				setTitle={setTitle}
+				title={title}
+				editId={editId}
+			/>
+			<TodoList
+				todos={todos}
+				handleRemove={handleRemove}
+				handleUpdate={handleUpdate}
+			/>
 		</div>
 	);
 }
