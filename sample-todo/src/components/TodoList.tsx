@@ -1,15 +1,6 @@
-import type { Todo } from "../types";
-import { TodoItem } from "./TodoItem";
+import { ReactElement } from "react";
 
-type Props = {
-	todos: Todo[];
-	handleRemove: (id: Todo["id"]) => void;
-	handleUpdate: (todo: Todo) => void;
-};
-
-export const TodoList: React.FC<Props> = (props) => {
-	const { todos, handleRemove, handleUpdate } = props;
-
+export const TodoList = ({ children }: { children: ReactElement }) => {
 	return (
 		<table style={{ marginTop: 30 }}>
 			<thead>
@@ -19,16 +10,7 @@ export const TodoList: React.FC<Props> = (props) => {
 					<th style={{ width: 80 }}>ACTION</th>
 				</tr>
 			</thead>
-			<tbody>
-				{todos?.map((todo) => (
-					<TodoItem
-						key={todo.id}
-						todo={todo}
-						handleRemove={handleRemove}
-						handleUpdate={handleUpdate}
-					/>
-				))}
-			</tbody>
+			<tbody>{children}</tbody>
 		</table>
 	);
 };

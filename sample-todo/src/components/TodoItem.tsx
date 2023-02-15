@@ -1,4 +1,4 @@
-import { Todo } from "../types";
+import { Todo } from "../../types";
 
 type Props = {
 	handleRemove: (id: Todo["id"]) => void;
@@ -7,7 +7,7 @@ type Props = {
 };
 
 export const TodoItem: React.FC<Props> = (props) => {
-	const { todo, handleRemove, handleUpdate } = props;
+	const { todo, handleRemove,handleUpdate } = props
 
 	return (
 		<tr key={todo.id}>
