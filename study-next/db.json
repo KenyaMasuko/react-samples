@@ -2,27 +2,27 @@
 	"tasks": [
 		{
 			"id": 1,
-			"title": "タスク1",
+			"title": "タスク1+",
 			"completed": false
 		},
 		{
 			"id": 2,
-			"title": "タスク2",
+			"title": "タスク2+",
 			"completed": false
 		},
 		{
 			"id": 3,
-			"title": "タスク3",
+			"title": "タスク3+",
 			"completed": false
 		},
 		{
 			"id": 4,
-			"title": "タスク4",
+			"title": "タスク4+",
 			"completed": false
 		},
 		{
 			"id": 5,
-			"title": "タスク5",
+			"title": "タスク5+",
 			"completed": false
 		}
 	],
@@ -39,6 +39,11 @@
 		},
 		{
 			"newsId": "n3",
+			"title": "ニュース3",
+			"content": "コンテンツ3"
+		},
+		{
+			"newsId": "n4",
 			"title": "ニュース3",
 			"content": "コンテンツ3"
 		}

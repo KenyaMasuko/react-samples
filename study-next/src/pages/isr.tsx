@@ -7,9 +7,10 @@ export const getStaticProps: GetStaticProps = async () => {
 	const res = await fetch(process.env.NEXT_PUBLIC_TASKS);
 	if (!res.ok) throw new Error("fetchに失敗しました");
 	const json = await res.json();
+
 	return {
 		props: { tasks: json },
-		revalidate: 5,
+		revalidate: 60,
 	};
 };
 
