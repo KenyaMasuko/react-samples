@@ -21,8 +21,6 @@ export const getStaticProps = async (context: any) => {
 };
 
 const BlogDetail = ({ blog }: { blog: any }) => {
-	console.log(blog);
-
 	return (
 		<>
 			<Head>
