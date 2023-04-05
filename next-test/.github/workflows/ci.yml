@@ -36,8 +36,6 @@ jobs:
           node-version: ${{ matrix.node }}
           cache: pnpm
 
-      - run: cd ./next-test
-
       - run: pnpm install
 
       - run: pnpm test
