@@ -1,5 +1,3 @@
-// src/pages/index.tsxのテストを書く
-
 import App from "@/pages";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { rest } from "msw";
@@ -46,7 +44,6 @@ describe("home page test", () => {
 		expect(
 			screen.getByRole("heading", { level: 1, name: /TODO/ })
 		).toBeDefined();
-		// フォームが表示されるかテスト
 		expect(screen.getByRole("textbox")).toBeDefined();
 	});
 
