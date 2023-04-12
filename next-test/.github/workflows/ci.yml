@@ -38,4 +38,8 @@ jobs:
 
       - run: pnpm install
 
-      - run: pnpm test
+      - run: pnpm coverage
+
+      - name: report coverage
+        if: always()
+        uses: davelosert/vitest-coverage-report-action@v1
